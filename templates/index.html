@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Recorder</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="http://localhost:8081/home.html">SmartNotes</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="http://localhost:8081/home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost:8081/../pages/teacher_dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost:8081/../pages/about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost:8081/../pages/teacher_profile.html">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Centered Recorder Section -->
+  <div class="main-container text-center my-5">
+    <div class="heading recorder-container">
+        <h1>Audio Recorder</h1>
+
+        <button onclick="startRecording()" class="btn btn-primary" style="margin: 5px;">Start Recording</button>
+        <button onclick="stopRecording()" class="btn btn-primary" style="margin: 5px;">Stop Recording</button>
+        <button onclick="generateKeywords()" class="btn btn-primary" style="margin: 5px;">Analyze</button>
+        <button id="generatePdfButton" class="btn btn-primary" style="margin: 5px;">Generate PDF</button>
+
+        <p id="recording-status" class="blinking-text mt-3" style="visibility: hidden;">Recording in progress...</p>
+        
+        <!-- Recognized Text Box -->
+        <div class="mt-3" style="max-width: 700px; margin: 10px auto;">
+          <h3>Live Recognition</h3>
+          <div id="recognizedText" class="border p-3 text-left" style="min-height: 80px; background-color: #f8f9fa;">
+            <!-- Live recognized text will appear here -->
+          </div>
+        </div>
+
+        <!-- Final Recognized Text Box -->
+        <div class="mt-3" style="max-width: 700px; margin: 10px auto;">
+          <h3>Final Recognized Text</h3>
+          <div id="finalText" class="border p-3 text-left" style="min-height: 80px; background-color: #f8f9fa; font-weight: bold;">
+            <!-- Final recognized text will appear here -->
+          </div>
+        </div>
+
+        <!-- Results Loading Text -->
+        <div id="resultsLoading" class="mt-3" style="max-width: 700px; margin: 10px auto; display: none; font-weight: bold;">
+          <p>Processing results... Please wait.</p>
+        </div>
+
+        <!-- Processed Results Container (Initially Hidden) -->
+        <div id="resultsContainer" class="mt-3" style="max-width: 700px; margin: 10px auto; display: none;">
+
+          <!-- Punctuated Text Box -->
+          <div class="mb-3">
+            <h3>Punctuated Text</h3>
+            <div id="punctuatedText" class="border p-3 text-left" style="min-height: 80px; background-color: #f8f9fa;"></div>
+          </div>
+
+          <!-- Key Phrases Box -->
+          <div class="mb-3">
+            <h3>Key Phrases</h3>
+            <div id="keyPhrasesBox" class="border p-3 text-left" style="min-height: 80px; background-color: #f8f9fa;"></div>
+          </div>
+
+          <!-- Ranked Results Box -->
+          <div class="mb-3">
+            <h3>Ranked Results</h3>
+            <div id="rankedResultsBox" class="border p-3 text-left" style="min-height: 80px; background-color: #f8f9fa;"></div>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+  
+  <!-- PDF Viewer -->
+
+  <!-- PDF Viewer -->
+  <div id="pdfContainer" class="container topic-body" style="display: none;">
+    <div class="card">
+      <div class="card-header">
+        <h5>Generated PDF</h5>
+      </div>
+
+      <div class="card-body">
+        <!-- Loading message -->
+        <div id="pdfLoadingMessage" class="text-center mb-3 font-weight-bold">
+          Loading PDF... Please wait.
+        </div>
+
+        <!-- Responsive PDF iframe -->
+        <div class="embed-responsive embed-responsive-21by9 border rounded">
+          <iframe class="embed-responsive-item" id="pdfViewer" allowfullscreen></iframe>
+        </div>
+
+        <div style="text-align: center;">
+          <button onclick="window.location.href='http://localhost:8081/../pages/teacher_dashboard.html'" class="btn btn-primary" style="margin: 5px;">
+            Submit
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 SmartNotes | All Rights Reserved</p>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{{ url_for('static', filename='script1.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
