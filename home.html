@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lecture Note Automation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="home.html">SmartNotes</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="pages/about.html">About Us</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero-section text-center ">
+    <div class="container">
+        <h1 >Automating Lecture Notes with NLP</h1>
+        <p>Revolutionizing the way students capture, structure, and engage with lecture content using AI-powered transcription, keyphrase extraction, and study material integration.</p>
+        <a href="pages/login.html" class="custom-btn mt-4">Get Started</a>
+
+
+    </div>
+</div>
+
+<div class="container  my-5">
+    <h1 class="project-title">Project Overview</h1>
+
+    <p>This project leverages advanced Natural Language Processing (NLP) techniques to enhance the lecture note-taking experience for students. Key features include:</p>
+        <li  class="custom-list">Real-time Speech Recognition and Transcription :</li>
+        <p>The system employs automatic speech recognition (ASR) to transcribe spoken lectures into text in real time. To ensure continuous processing, the audio is recorded in short intervals and transcribed using Google's Speech-to-Text API. Each segment of the recognized text is appended to construct a complete lecture transcript. This approach ensures high accuracy while maintaining responsiveness, allowing students to obtain near-instantaneous textual representation of spoken content. </p>
+        <li  class="custom-list">Automated Punctuation Correction Using Deep Learning :</li>
+        <p>The system employs automatic speech recognition (ASR) to transcribe spoken lectures into text in real time. To ensure continuous processing, the audio is recorded in short intervals and transcribed using Google's Speech-to-Text API. Each segment of the recognized text is appended to construct a complete lecture transcript. This approach ensures high accuracy while maintaining responsiveness, allowing students to obtain near-instantaneous textual representation of spoken content. </p>
+        <li  class="custom-list">Keyphrase Detection for Efficient Content Summarization :</li>
+        <p>To improve the usability of lecture notes, keyphrase extraction techniques are used to identify and highlight essential terms within the text. The system utilizes a combination of statistical and graph-based ranking methods to extract the most relevant phrases. Additionally, singular and plural variations of key terms are detected to ensure consistency. By emphasizing important concepts, this feature enables students to quickly locate key topics within their lecture notes.  
+        </p>
+        <li  class="custom-list">Integration of External Study Materials :</li>
+        <p>To provide students with supplementary resources, the system integrates an intelligent search mechanism that retrieves relevant study materials from the web. Identified key phrases serve as search queries, and retrieved resources are ranked based on keyword density, content relevance, and external references. This ensures that students receive high-quality, contextually relevant resources to enhance their understanding of the lecture content.  
+        </p>
+        <li  class="custom-list">Structured PDF Generation for Lecture Notes :</li>
+        <p>The final processed lecture notes, including transcribed text, punctuation-enhanced content, highlighted key phrases, and referenced study materials, are formatted into a structured PDF document. The generated document maintains proper alignment, bolds key concepts, and provides hyperlinks to external resources. This feature ensures that students receive well-organized, easy-to-navigate lecture notes that can be stored, shared, or printed for future reference.  
+
+        </p>
+    </ul>
+</div>
+
+<div class="container text-center my-5">
+    <h1 class="centered-title">Workflow</h1>
+   
+    <img src="images/lec.png" class="img-fluid" alt="Lecture Automation">
+</div>
+
+
+
+
+
+
+<!-- Features Section -->
+<div class="features bg-light py-5">
+    <div class="container">
+        <div class="row text-center">
+            <!-- Row 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <i class="fas fa-microphone-alt feature-icon"></i>
+                <h4 class=" card-col mt-3">Speech Recognition</h4>
+                <p>Captures and transcribes lectures in real-time for students' convenience.</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <i class="fas fa-pen-fancy feature-icon"></i>
+                <h4 class=" card-col mt-3">Smart Punctuation</h4>
+                <p>Enhances text readability by automatically inserting correct punctuation.</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <i class="fas fa-book feature-icon"></i>
+                <h4 class="card-col mt-3">Keyphrase Extraction</h4>
+                <p>Highlights key concepts and provides external study resources.</p>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="col-lg-6 col-md-6 mb-4">
+                <i class="fas fa-globe feature-icon"></i>
+                <h4 class=" card-col mt-3">Web Study Integration</h4>
+                <p>Access relevant study materials from the web to enhance your learning experience.</p>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <i class="fas fa-file-pdf feature-icon"></i>
+                <h4 class=" card-col mt-3">PDF Generation</h4>
+                <p>Automatically generates lecture notes in PDF format, ensuring easy access and offline study convenience.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2025 SmartNotes | All Rights Reserved</p>
+</div>
+
+<script src="js/myjs.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

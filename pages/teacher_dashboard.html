@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Teacher Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/mycss.css">
+
+
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="../home.html">SmartNotes</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="../home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="teacher_dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="teacher_profile.html">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container topic-body mt-5">
+    <div class="heading text-center">
+        <h1>Welcome, Teacher</h1>
+        <p class="lead">Create and Manage Your Courses</p>
+    </div>
+
+    <div class="text-center mt-4">
+        <!-- Create Course Button -->
+        <button class="btn btn-primary" data-toggle="modal" data-target="#createCourseModal">
+            <i class="fas fa-plus"></i> Create Course
+        </button>
+    </div>
+
+    <!-- Existing Courses -->
+    <div class="container topic-body" id="coursesContainer">
+
+        <!-- Course Card 1 -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <div>
+                    <h5>Database Management System</h5>
+                </div>
+            </div>
+    
+            <div class="card-body">
+                <!-- Course Description -->
+                <p class="course-description">
+                    Learn about encryption, decryption, and security protocols used to protect data and communication.
+                </p>
+    
+                <!-- Buttons with Vertical Centering on Small Screens and Horizontal Spacing on Larger Screens -->
+                <div class="d-flex flex-column flex-md-row justify-content-around align-items-center">
+                    <button class="btn btn-primary mb-2 mb-md-0" onclick="redirectToPort(5000)">Record</button>
+                    <a href="teacher_previous_notes.html" class="btn btn-secondary mb-2 mb-md-0">View Previous Notes</a>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#studentModal">View Students</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Course Card 2 -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <div>
+                    <h5>Computer Network</h5>
+                </div>
+            </div>
+    
+            <div class="card-body">
+                <!-- Course Description -->
+                <p class="course-description">
+                    Learn about encryption, decryption, and security protocols used to protect data and communication.
+                </p>
+    
+                <!-- Buttons with Vertical Centering on Small Screens and Horizontal Spacing on Larger Screens -->
+                <div class="d-flex flex-column flex-md-row justify-content-around align-items-center">
+                    <a href="record.html" class="btn btn-primary mb-2 mb-md-0">Record</a>
+                    <a href="teacher_previous_notes.html" class="btn btn-secondary mb-2 mb-md-0">View Previous Notes</a>
+                    <a href="#" class="btn btn-success">View Students</a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+<!-- Student Details Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header modal-header-blue">
+                <h5 class="modal-title" id="studentModalLabel">Student Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <table class="table table-bordered table-striped">
+                    <thead class="modal-header-blue">
+                        <tr>
+                            <th>Serial No.</th>
+                            <th>Roll Number</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>DBMS001</td><td>John Doe</td></tr>
+                        <tr><td>2</td><td>DBMS002</td><td>Jane Smith</td></tr>
+                        <tr><td>3</td><td>DBMS003</td><td>Michael Johnson</td></tr>
+                        <tr><td>4</td><td>DBMS004</td><td>Emily Davis</td></tr>
+                        <tr><td>5</td><td>DBMS005</td><td>Daniel Brown</td></tr>
+                        <tr><td>6</td><td>DBMS006</td><td>Olivia Wilson</td></tr>
+                        <tr><td>7</td><td>DBMS007</td><td>Matthew Taylor</td></tr>
+                        <tr><td>8</td><td>DBMS008</td><td>Emma Thomas</td></tr>
+                        <tr><td>9</td><td>DBMS009</td><td>James White</td></tr>
+                        <tr><td>10</td><td>DBMS010</td><td>Linda Martin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <p>&copy; 2025 SmartNotes | All Rights Reserved</p>
+</div>
+
+<!-- Create Course Modal -->
+<div class="modal fade" id="createCourseModal" tabindex="-1" aria-labelledby="createCourseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-header modal-header-blue">
+                <h5 class="modal-title" id="saveModalLabel">Create a New Course</h5>
+            
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="courseForm">
+                    <div class="form-group">
+                        <label for="courseTitle">Course Title</label>
+                        <input type="text" id="courseTitle" class="form-control" placeholder="Enter course title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseDesc">Course Description</label>
+                        <textarea id="courseDesc" class="form-control" rows="3" placeholder="Enter course description" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="giveAccess">Give Access To</label>
+                        <input type="text" id="giveAccess" class="form-control" placeholder="Enter mail ID" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Add Course</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+</script>
+
+<script src="../js/myjs.js"></script> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Font and Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/mycss.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="../home.html">SmartNotes</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../home.html">Home</a>
+                </li>
+                <!-- Horizontal Line -->
+                <li class="nav-item w-100 d-lg-none">
+                    <div class="navbar-divider"></div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                 <!-- Horizontal Line -->
+                 <li class="nav-item w-100 d-lg-none">
+                    <div class="navbar-divider"></div>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Login Section -->
+<div class="container login-container">
+    <div class="login-wrap">
+
+        <div class="icon">
+            <i class="fas fa-user-circle"></i>
+        </div>
+
+        <h2>Login</h2>
+
+        <form class="login-form" onsubmit="redirectToDashboard(event)">
+
+            <!-- Dropdown for Student/Teacher selection -->
+            <div class="form-group">
+                <select name="userType" id="userType" class="form-control" required>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <input type="text" name="email" class="form-control" placeholder="Email" required>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Get Started</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2025 SmartNotes | All Rights Reserved</p>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- 
+<script>
+    function redirectToDashboard(event) {
+        event.preventDefault();  // Prevent form submission
+        const userType = document.getElementById('userType').value;
+
+        if (userType === 'teacher') {
+            window.location.href = 'teacher_dashboard.html';
+        } else {
+            window.location.href = 'student_dashboard.html';
+        }
+    }
+</script> -->
+
+<script>
+    function redirectToDashboard(event) {
+        event.preventDefault();  // Prevent form submission
+        const userType = document.getElementById('userType').value;
+
+        // Store user type in localStorage
+        localStorage.setItem("userType", userType);
+
+        // Redirect based on user type
+        if (userType === 'teacher') {
+            window.location.href = 'teacher_dashboard.html';
+        } else {
+            window.location.href = 'student_dashboard.html';
+        }
+    }
+</script>
+
+
+</body>
+</html>

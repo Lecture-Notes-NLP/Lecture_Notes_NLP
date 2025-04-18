@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <!-- Bootstrap 4.5.2 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/mycss.css"> 
+
+    <style>
+      
+    
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="../home.html">SmartNotes</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="../home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="student_dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="student_profile.html">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="quiz-head text-center my-4">Multiple Choice Questions</h1>
+
+    <form id="mcqForm">
+
+        <!-- MCQ Questions -->
+        <div class="card">
+            <div class="card-header">1. What is the capital of France?</div>
+            <div class="card-body">
+                <div class="form-check">
+                    <input type="radio" name="q1" value="a" class="form-check-input" required>
+                    <label class="form-check-label">A) Berlin</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q1" value="b" class="form-check-input">
+                    <label class="form-check-label">B) Paris</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q1" value="c" class="form-check-input">
+                    <label class="form-check-label">C) Madrid</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">2. Which planet is known as the Red Planet?</div>
+            <div class="card-body">
+                <div class="form-check">
+                    <input type="radio" name="q2" value="a" class="form-check-input" required>
+                    <label class="form-check-label">A) Mars</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q2" value="b" class="form-check-input">
+                    <label class="form-check-label">B) Jupiter</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q2" value="c" class="form-check-input">
+                    <label class="form-check-label">C) Saturn</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more questions -->
+        <div class="card">
+            <div class="card-header">3. What is 5 + 3?</div>
+            <div class="card-body">
+                <div class="form-check">
+                    <input type="radio" name="q3" value="a" class="form-check-input" required>
+                    <label class="form-check-label">A) 7</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q3" value="b" class="form-check-input">
+                    <label class="form-check-label">B) 8</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q3" value="c" class="form-check-input">
+                    <label class="form-check-label">C) 9</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar cards for remaining MCQs -->
+        <div class="text-center my-4">
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Score Modal -->
+<div class="modal fade" id="scoreModal" tabindex="-1" aria-labelledby="scoreModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header modal-header-blue">
+                <h5 class="modal-title" id="scoreModalLabel">Your Score</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body text-center">
+                <h3 id="scoreResult"></h3>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 SmartNotes | All Rights Reserved</p>
+</div>
+
+<!-- JavaScript -->
+
+
+<script src="../js/myjs.js"></script> 
+
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
